@@ -88,6 +88,11 @@ module.exports.stream = function (name, opts) {
             pull.collect(function (err, result) {
               t.notOk(err, 'Stream raw entries out of database')
               t.equal(result.length, entries.length, 'Create right number of entries')
+
+              //sort result, because fs version can return unsorted data
+              result.sort(function (a, b) {
+                return a.key > b.key ? 1 : a.key < b.key ? -1 : 0
+              })
               t.deepEqual(result[0], entries[0], 'First entry is correct')
               t.deepEqual(result[1], entries[1], 'Second entry is correct')
             })
