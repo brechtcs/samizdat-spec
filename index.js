@@ -74,8 +74,8 @@ module.exports.stream = function (name, opts) {
       t.plan(5)
 
       var entries = [
-        {key: '1k178m1unww-00000000000-arf', value: 'barf'},
-        {key: '1k178m1unx3-00000000000-yarf', value: 'gnarf'}
+        {key: '1k178m1unww-00000000000-yarf', value: 'barf'},
+        {key: '1k178m1unx3-00000000000-arf', value: 'gnarf'}
       ]
 
       pull(
