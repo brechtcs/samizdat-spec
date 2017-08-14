@@ -51,7 +51,7 @@ module.exports.basic = function (name, opts) {
 
             db.read(data.prev, function (err, value) {
               t.notOk(err, 'read older version of updated entry')
-              t.equal(value, data.value, 'requested version returns correctly')
+              t.equal(value, 'stuff', 'requested version returns correctly')
             })
 
             db.history('some', function (err, versions) {
