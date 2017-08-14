@@ -36,7 +36,7 @@ module.exports.basic = function (name, opts) {
     })
 
     test(name + ': create and update entry, read both versions, and check history', function (t) {
-      t.plan(10)
+      t.plan(13)
 
       db.create('qds74e412-000000000-entry', 'stuff', function (err) {
         t.ok(err && err.invalidId, 'new entry id cannot be valid database key')
