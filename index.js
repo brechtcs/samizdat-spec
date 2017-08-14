@@ -51,7 +51,7 @@ module.exports.basic = function (name, opts) {
 
             db.read(data.prev, function (err, value) {
               t.notOk(err, 'read older version of updated entry')
-              t.equal(value, 'stuff', 'requested version returns correctly')
+              t.equal(value, data.value, 'requested version returns correctly')
             })
 
             db.history('some', function (err, versions) {
@@ -63,8 +63,8 @@ module.exports.basic = function (name, opts) {
 
             db.latest('some', function (err, entry) {
               t.notOk(err, 'get latest version of entry')
-              t.equal(entry.key, data.prev, 'latest version has correct key')
-              t.equal(entry.value, 'stuff', 'latest version has correct value')
+              t.equal(entry.key, data.key, 'latest version has correct key')
+              t.equal(entry.value, data.value, 'latest version has correct value')
             })
           })
         }, 10)
