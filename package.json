@@ -1,10 +1,11 @@
 {
   "name": "samizdat-spec",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "pull-stream": "^3.6.0"
+    "pull-stream": "^3.6.0",
+    "samizdat-ts": "^1.0.4"
   },
   "bugs": {
     "url": "https://github.com/pamphlets/samizdat-spec/issues"
