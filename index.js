@@ -60,6 +60,12 @@ module.exports.basic = function (name, opts) {
               t.equal(versions[0], data.prev, 'first version key is correct')
               t.equal(versions[1], data.key, 'second version key is correct')
             })
+
+            db.latest('some', function (err, entry) {
+              t.notOk(err, 'get latest version of entry')
+              t.equal(entry.key, data.prev, 'latest version has correct key')
+              t.equal(entry.value, 'stuff', 'latest version has correct value')
+            })
           })
         }, 10)
       })
